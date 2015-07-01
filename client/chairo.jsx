@@ -1,10 +1,12 @@
 Session.setDefault('counter', 0);
 
-var HelloClick = ReactMeteor.createClass({
-    templateName: "helloClick",
+var Hello = ReactMeteor.createClass({
+    templateName: "hello",
 
-    counter: function () {
-        return Session.get('counter');
+    getMeteorState: function() {
+        return {
+            counter: Session.get('counter')
+        }
     },
 
     addCount: function() {
@@ -13,9 +15,10 @@ var HelloClick = ReactMeteor.createClass({
 
     render: function() {
         return (
-            <button onClick={this.addCount}>click</button>
-            <p>You have pressed the button {this.counter()} times.</p>
+            <section>
+                <button onClick={this.addCount}>click</button>
+                <p>You have pressed the button {this.state.counter} times.</p>
+            </section>
         )
-
     }
 });
