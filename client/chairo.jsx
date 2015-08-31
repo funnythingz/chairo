@@ -1,7 +1,5 @@
-Session.setDefault('counter', 0);
-
-var Hello = ReactMeteor.createClass({
-    templateName: "hello",
+var CreatePanel = ReactMeteor.createClass({
+    templateName: "createPanel",
 
     getMeteorState: function() {
         return {
@@ -9,15 +7,17 @@ var Hello = ReactMeteor.createClass({
         }
     },
 
-    addCount: function() {
-        Session.set('counter', Session.get('counter') + 1);
+    createSpot: function() {
+        var spotName = this.refs.inputSpotName.getDOMNode().value;
+        Spots.insert({name: spotName});
+        alert('create new spot is `' + spotName + '`');
     },
 
     render: function() {
         return (
             <section>
-                <button onClick={this.addCount}>click</button>
-                <p>You have pressed the button {this.state.counter} times.</p>
+                <input type="text" ref="inputSpotName" value={this.state.textValue} onChange={this.changeText} />
+                <button onClick={this.createSpot}>new spot</button>
             </section>
         )
     }
