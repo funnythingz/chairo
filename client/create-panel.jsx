@@ -10,7 +10,6 @@ var CreatePanel = ReactMeteor.createClass({
     createSpot: function() {
         var spotName = this.refs.inputSpotName.getDOMNode().value;
         Spots.insert({name: spotName});
-        alert('create new spot is `' + spotName + '`');
     },
 
     render: function() {
