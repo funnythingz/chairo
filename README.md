@@ -1,3 +1,3 @@
-# chairo
+# iroiro-meteor
 
-TODO: Chat + Iro App
+iroiro for meteor

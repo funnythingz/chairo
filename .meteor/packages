@@ -8,4 +8,5 @@ meteor-platform
 autopublish
 insecure
 grigio:babel
-reactjs:react
+mquandalle:jade
+fourseven:scss
